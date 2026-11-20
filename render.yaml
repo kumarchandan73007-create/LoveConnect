@@ -1,7 +1,9 @@
+
 services:
   - type: web
     name: loveconnect
     runtime: node
+    plan: free
     buildCommand: npm install
     startCommand: npm start
     envVars:
@@ -9,9 +11,4 @@ services:
         value: production
       - key: SESSION_SECRET
         generateValue: true
-      - key: DATABASE_DIR
-        value: /var/data
-    disk:
-      name: loveconnect-data
-      mountPath: /var/data
-      sizeGB: 1
+  
